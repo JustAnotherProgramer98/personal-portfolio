@@ -43,40 +43,86 @@ import './bootstrap';
       alterStyles(isBackToTopRendered);
     }
   });
-    const textChange = document.getElementById('text-change');
-    const textArray = ["I am a SSr Web Developer", "I am a Software Engineer", "I am from Tucuman", "I am a Full Stack Developer"];
-    let index = 0;
-    let letterIndex = 0;
-    let currentText = "";
-    let isDeleting = false;
-    let isEnd = false;
-    let speed = 100;
+  const textChange = document.getElementById('text-change');
+  const textArray = ["SSr Web Developer", "Software Engineer", "🇦🇷  Argentinian", "Full Stack Developer"];
+  let index = 0;
+  let letterIndex = 0;
+  let currentText = "";
+  let isDeleting = false;
+  let isEnd = false;
+  let speed = 100;
+  let changeDelay = 3000; // Delay after typing
+  let showCursor = true; // Flag to control cursor display
 
-
-    function type() {
-        if (index === textArray.length) {
-            index = 0;
-        }
-        currentText = textArray[index];
-        if (isDeleting) {
-            textChange.textContent = currentText.slice(0, letterIndex);
-            letterIndex--;
-        } else {
-            textChange.textContent = currentText.slice(0, letterIndex);
-            letterIndex++;
-        }
-        if (letterIndex === currentText.length) {
-            index++;
-            letterIndex = 0;
-            isDeleting = true;
-            speed = 5000;
-        }
-        if (isDeleting && letterIndex === 0) {
-            isDeleting = false;
-            isEnd = true;
-            speed = 100;
-        }
-        setTimeout(type, speed);
+  function type() {
+    if (index === textArray.length) {
+      index = 0;
     }
-    type();
+    currentText = textArray[index];
+    if (isDeleting) {
+      textChange.textContent = currentText.slice(0, letterIndex);
+      letterIndex--;
+      showCursor = false; // Hide cursor while deleting
+    } else {
+      textChange.textContent = currentText.slice(0, letterIndex + 1); // Add 1 to show the current letter
+      letterIndex++;
+      showCursor = true; // Show cursor while typing
+    }
+    if (letterIndex === currentText.length) {
+      index++;
+      letterIndex = 0;
+      isDeleting = true;
+      speed = changeDelay; // Set the delay after typing is finished
+    }
+    if (isDeleting && letterIndex === 0) {
+      isDeleting = false;
+      isEnd = true;
+      speed = 100;
+      showCursor = false; // Hide cursor while waiting
+      setTimeout(type, changeDelay); // Add the delay before changing to the next text
+      return;
+    }
+    if (showCursor) {
+      textChange.textContent += "|"; // Add the cursor after the current letter
+    }
+    setTimeout(type, speed);
+  }
+  type();
+
+  const blueSquare = document.getElementById('blue-square');
+  //get the width of the rectange with the class name 'rectangle'
+  const rectangleWidth = document.querySelector('.rectangle').offsetWidth;
+  let isDragging = false;
+  let startX = 0;
+  let initialPosition = 0;
+  const squareWidth = 590; // Ancho del cuadrado
+  const maxMove = rectangleWidth - squareWidth -4; // Valor máximo de desplazamiento
+
+  blueSquare.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    startX = e.clientX;
+    initialPosition = blueSquare.offsetLeft;
+    blueSquare.style.cursor = 'grabbing';
+  });
+
+  document.addEventListener('mousemove', (e) => {
+    if (isDragging) {
+      const movedX = e.clientX - startX;
+      let newPosition = initialPosition + movedX;
+
+      // Limitar el desplazamiento dentro de los márgenes del rectángulo
+      if (newPosition < 0) {
+        newPosition = 0;
+      } else if (newPosition > maxMove) {
+        newPosition = maxMove;
+      }
+
+      blueSquare.style.left = newPosition + 'px';
+    }
+  });
+
+  document.addEventListener('mouseup', () => {
+    isDragging = false;
+    blueSquare.style.cursor = 'grab';
+  });
     

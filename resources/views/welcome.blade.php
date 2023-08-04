@@ -23,20 +23,16 @@
   <!-- ***** Header ***** -->
 
   <header class="header" role="banner" id="top">
-    <div class="row">
+    
       <nav class="nav" role="navigation">
         <ul class="nav__items">
-          <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
-          <li class="nav__item"><a href="#clients" class="nav__link">Clients</a></li>
-          <li class="nav__item">
-            <a href="#about" class="nav__link">About</a>
-          </li>
-          <li class="nav__item">
-            <a href="#contact" class="nav__link">Contact</a>
-          </li>
+          <li class="nav__item"><a href="#projects" class="nav__link">Projects I have worked on</a></li>
+          <li class="nav__item"><a href="#skills" class="nav__link">Hard & Soft Skills</a></li>
+          <li class="nav__item"><a href="#about" class="nav__link">About Me</a></li>
+          <li class="nav__item"><a href="#contact" class="nav__link">Contact Me</a></li>
         </ul>
       </nav>
-    </div>
+    
     <div class="header__text-box row">
       <div class="header__text">
         <h1 class="heading-primary">
@@ -44,8 +40,8 @@
           <span>Evangelista Santiago</span>
         </h1>
         <!-- Put a small paragraph about yourself -->
-        <p id="text-change"></p>
-        <a href="#contact" class="btn btn--pink">Get in touch</a>
+        <div id="text-change"></div>
+        <a href="#projects" class="btn btn--pink">Begin the tour</a>
       </div>
     </div>
   </header>
@@ -54,42 +50,60 @@
 
     <!-- ***** Work ***** -->
 
-    <section class="work" id="work">
+    <section class="work" id="projects">
       <div class="row">
-        <h2>My Work</h2>
+        <h2>Projects I have worked on</h2>
         <div class="work__boxes">
 
           <!-- Each div with the work__box class is a project. -->
 
           <div class="work__box">
             <div class="work__text">
-              <h3>Portfolio Template</h3>
-              <p>
-                A free Open Source Portfolio for anyone to use for free.
-              </p>
+              <h3>Doquina</h3>
+              <h5>Medical Care Solutions</h5>
+              <p>Doquina is a platform that connects patients with doctors as well as with pharmacies</p>
+              <p>Technologies applied:</p>
               <ul class="work__list">
                 <li>HTML</li>
-                <li>SCSS</li>
+                <li>Bootstrap</li>
                 <li>JavaScript</li>
-                <li>Parcel</li>
+                <li>Jquery</li>
               </ul>
 
               <div class="work__links">
-                <a href="https://nisar.surge.sh" target="_blank" class="link__text">
+                <a href="http://doquina.com/" target="_blank" class="link__text">
                   Visit Site <span>&rarr;</span>
-                </a>
-                {{-- <a href="https://github.com/nisarhassan12/portfolio" title="View Source Code" target="_blank">
-                  <img src="./images/github.svg" class="work__code" alt="GitHub"> --}}
                 </a>
               </div>
             </div>
             <div class="work__image-box">
+              <img src="{{asset('assets/doquina-preview.png')}}" alt="">
             </div>
           </div>
 
           <div class="work__box">
             <div class="work__text">
-              <h3>Calculator</h3>
+              <h3>Verde Valle</h3>
+              <p>Verde Valle is a distributor of the best harvests of rice, bean, seeds and ingredients from Mexico to the world</p>
+              <ul class="work__list">
+                <li>React</li>
+                <li>Next.js</li>
+                <li>Node</li>
+                <li>MongoDB</li>
+              </ul>
+
+              <div class="work__links">
+                <a href="#" class="link__text">Visit Site <span>&rarr;</span></a>
+              </div>
+            </div>
+            <div class="work__image-box">
+              <img src="{{asset('assets/verde-valle-preview.png')}}" alt="">
+            </div>
+          </div>
+
+          <div class="work__box">
+            <div class="work__text">
+              <h3>Yeah!</h3>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod,
                 eius.
@@ -102,7 +116,7 @@
               </ul>
 
               <div class="work__links">
-                <a href="#" class="link__text">
+                <a href="https://www.verdevalle.com" target="_blank" class="link__text">
                   Visit Site <span>&rarr;</span>
                 </a>
                 <a href="#">
@@ -111,16 +125,13 @@
               </div>
             </div>
             <div class="work__image-box">
+              <img src="{{asset('assets/yeah-preview.png')}}" alt="">
             </div>
           </div>
-
           <div class="work__box">
             <div class="work__text">
-              <h3>Notificator</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod,
-                eius.
-              </p>
+              <h3>VolksWagen -Colombia</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod,eius.</p>
               <ul class="work__list">
                 <li>React</li>
                 <li>Next.js</li>
@@ -129,7 +140,7 @@
               </ul>
 
               <div class="work__links">
-                <a href="#" class="link__text">
+                <a href="https://www.verdevalle.com" target="_blank" class="link__text">
                   Visit Site <span>&rarr;</span>
                 </a>
                 <a href="#">
@@ -138,7 +149,31 @@
               </div>
             </div>
             <div class="work__image-box">
-              
+              <img src="{{asset('assets/volkswagen-preview.png')}}" alt="">
+            </div>
+          </div>
+                    <div class="work__box">
+            <div class="work__text">
+              <h3>Agip</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod,eius.</p>
+              <ul class="work__list">
+                <li>React</li>
+                <li>Next.js</li>
+                <li>Node</li>
+                <li>MongoDB</li>
+              </ul>
+
+              <div class="work__links">
+                <a href="https://www.verdevalle.com" target="_blank" class="link__text">
+                  Visit Site <span>&rarr;</span>
+                </a>
+                <a href="#">
+                  {{-- <img src="./images/github.svg" class="work__code" title="View Source Code" alt="GitHub"> --}}
+                </a>
+              </div>
+            </div>
+            <div class="work__image-box">
+              <img src="{{asset('assets/agip-preview.png')}}" alt="">
             </div>
           </div>
         </div>
@@ -147,17 +182,39 @@
 
     <!-- ***** Clients ***** -->
 
-    <section class="client" id="clients">
+    <section class="client" id="skills">
       <div class="row">
-        <h2>Clients</h2>
-        <div class="client__logos">
-          <!-- Add logos of the clients or companies you'have worked with. -->
-          {{-- <img src="./images/ronjones.png" class="client__logo" alt="Company 2" />
-          <img src="./images/goldengrid.png" class="client__logo" alt="Company 3" />
-          <img src="./images/bullseye.png" class="client__logo" alt="Company 1" />
-          <img src="./images/mighty-furnitures.png" class="client__logo" alt="Company 1" />
-          <img src="./images/fastlane.png" class="client__logo" alt="Company 3" />
-          <img src="./images/chippy.png" class="client__logo" alt="Company 1" /> --}}
+        <h2>Hard & Soft Skills</h2>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="rectangle">
+          <div class="content" style="display: flex;justify-content: space-between;width: 100%;">
+          <ul class="left-list">
+            <li>Teamwork</li>
+            <li>Adaptability</li>
+            <li>Creativity</li>
+            <li>Conflict resolution</li>
+            <li>Communication</li>
+            <li>Leadership</li>
+            <li>Time management</li>
+          </ul>
+          <ul class="right-list">
+            <li>HTML5</li>
+            <li>Laravel Framework</li>
+            <li>Css</li>
+            <li>Tailwind & Bootstrap</li>
+            <li>Flutter & Dart</li>
+            <li>Javascript  </li>
+            <li>Knowledge and use of Git</li>
+            <li>Vue.Js</li>
+            <li>Agile strategies</li>
+            <li>Scrum</li>
+            <li>Linux</li>
+          </ul>
+          <div id="blue-square">
+            <p>Hard Skills</p>
+          </div>
+        </div>
         </div>
       </div>
     </section>
@@ -171,10 +228,10 @@
           <div class="about__text">
             <!-- Replace the below paragraph with info about yourself -->
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos id
-              nostrum illo harum blanditiis, tenetur eum suscipit cupiditate
-              in vel, ex quam quidem quos mollitia labore aut sunt eius
-              ratione molestiae fuga veniam facere similique voluptate.
+            Im a Full Stack Developer with 3 years of experience in the field, I have worked with different technologies such
+            as MySQL, PHP, Laravel, Bootstrap, HTML, CSS, JavaScript, Jquery, Git, Github, Bitbucket, Jira,Trello,Figma, Dart, Flutter and others.
+            <br>My profesonal goal is improve my skills by being part of a group where I will always be learning and getting 
+            the opportunity to upgrade my abilities taking part of new projects and using the latest technologies requested on the market
             </p>
             <!-- Provide a link to your resume -->
             <a href="#" class="btn">My Resume</a>
@@ -194,18 +251,26 @@
   <section class="contact" id="contact">
     <div class="row">
       <h2>Get in Touch</h2>
-      <div class="contact__info">
-        <p>
-          Are you looking for a fast-performing and user-friendly website to
-          represent your product or business? or looking for any kind of
-          consultation? or want to ask questions? or have some advice for me
-          or just want to say "Hi 👋" in any case feel free to Let me know. I
-          will do my best to respond back. 😊 The quickest way to reach out to
-          me is via an email.
-        </p>
-        <!-- Replace the email with yours -->
-        <a href="mailto:you@example.com" class="btn">you@example.com</a>
-      </div>
+      <form class="form-wrapper">
+        <div class="form-card">
+          <label class="form-label" for="full_name"><i class="fa-solid fa-user"></i>Full Name </label>
+          <input class="form-input" type="text" name="full_name" required="required"/>
+        </div>
+
+        <div class="form-card">
+          <label class="form-label" for="email"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Email </label>
+          <input class="form-input" type="email" name="email" required="required"/>
+        </div>
+
+        <div class="form-card">
+          <label class="form-label" for="phone_number"><i class="fa-solid fa-phone"></i>Phone number</label>
+          <input class="form-input" type="number" name="phone_number"required="required"/>
+        </div>
+
+        <div class="btn-wrap">
+          <button> Submit </button>
+        </div>
+      </form>
     </div>
   </section>
 
@@ -213,32 +278,26 @@
 
   <footer role="contentinfo" class="footer">
     <div class="row">
+      <p>My Social Media</p>
       <!-- Update the links to point to your accounts -->
       <ul class="footer__social-links">
         <li class="footer__social-link-item">
-          {{-- <a href="https://twitter.com/nisarhassan12/" title="Link to Twitter Profile">
-            <img src="./images/twitter.svg" class="footer__social-image" alt="Twitter">
-          </a> --}}
+          <a href="https://twitter.com/nisarhassan12/" title="Instagram Profile">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
         </li>
         <li class="footer__social-link-item">
-          {{-- <a href="https://github.com/nisarhassan12/" title="Link to Github Profile">
-            <img src="./images/github.svg" class="footer__social-image" alt="Github">
-          </a> --}}
+          <a href="https://github.com/nisarhassan12/" title="Link to Github Profile">
+            <i class="fa-brands fa-github"></i>
+          </a>
         </li>
         <li class="footer__social-link-item">
-          {{-- <a href="https://codepen.io/nisar_hassan" title="Link to Codepen Profile">
-            <img src="./images/codepen.svg" class="footer__social-image" alt="Codepen">
-          </a> --}}
-        </li>
-        <li class="footer__social-link-item">
-          {{-- <a href=https://www.linkedin.com/in/nisar-hassan-naqvi-413466199/">
-            <img src="./images/linkedin.svg" title="Link to Linkedin Profile" class="footer__social-image" alt="Linkedin">
-          </a> --}}
+          <a href=https://www.linkedin.com/in/nisar-hassan-naqvi-413466199/">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
         </li>
       </ul>
-
-      <!-- If you give me some credit by keeping the below paragraph, will be huge for me 😊 Thanks. -->
-      <p>{{Carbon\Carbon::now()->year}} - Template designed & developed by <a href="https://github.com/JustAnotherProgramer98" class="link">Santiago Evangelista</a></p>
+      <p>{{Carbon\Carbon::now()->year}} - Template  developed by <a href="https://github.com/JustAnotherProgramer98" class="link">Santiago Evangelista</a></p>
     </div>
   </footer>
 
